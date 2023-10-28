@@ -1,3 +1,5 @@
+import yaml
+
 def get_configs():
     with open("config.yaml", "r") as stream:
         try:
