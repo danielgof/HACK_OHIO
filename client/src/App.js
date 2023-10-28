@@ -6,6 +6,7 @@ import "./App.css";
 import MainPage from "./pages/MainPage/MainPage.jsx";
 import InfoPage from "./pages/InfoPage/InfoPage.jsx";
 import MapPage from "./pages/InfoPage/InfoPage.jsx";
+import BuildingPage from "./pages/BuildingPage/BuildingPage.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/info" element={<InfoPage />} />
           <Route path="/map" element={<MapPage />} />
+          <Route path="/building/:id?" element={<BuildingPage />} />
         </Routes>
         <BottomBar />
       </div>
