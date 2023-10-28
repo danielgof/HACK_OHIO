@@ -17,12 +17,12 @@ const TopBar = () => {
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img
-            backgroundcolor="white"
-            src={"light"}
-            height={"light"}
+            background-color="white"
+            src={logo}
+            height={"45"}
             width="54"
             className="d-inline-block align-top"
-            alt="Logo"
+            alt="logo"
           />
         </Navbar.Brand>
         <Nav.Link style={{ color: "light" }} as={Link} to="/maps">
