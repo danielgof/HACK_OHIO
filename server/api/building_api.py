@@ -1,10 +1,6 @@
-from flask import Blueprint, request, jsonify, abort, Response
-from flask_cors import CORS
-from datetime import date
-from datetime import datetime, timedelta
-from flask import current_app
+from flask import Blueprint
 from create import *
-from models.people import *
+from server.models.building import *
 
 
 building = Blueprint("building", __name__, url_prefix="/api/v1/building")

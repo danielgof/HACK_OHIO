@@ -1,8 +1,6 @@
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from datetime import date
-
-import models.people
+import models.building
 from utils import *
 from base import *
 
