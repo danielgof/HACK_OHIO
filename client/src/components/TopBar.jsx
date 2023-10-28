@@ -19,7 +19,7 @@ const TopBar = () => {
           <img
             background-color="white"
             src={logo}
-            height={"45"}
+            height="45"
             width="54"
             className="d-inline-block align-top"
             alt="logo"
