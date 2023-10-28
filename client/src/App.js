@@ -5,7 +5,7 @@ import TopBar from "./components/TopBar/TopBar.jsx";
 import "./App.css";
 import MainPage from "./pages/MainPage/MainPage.jsx";
 import InfoPage from "./pages/InfoPage/InfoPage.jsx";
-import MapPage from "./pages/InfoPage/InfoPage.jsx";
+import MapPage from "./pages/MapPage/MapPage.jsx";
 
 function App() {
   return (
