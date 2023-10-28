@@ -7,6 +7,15 @@ import Dropdown from "react-bootstrap/Dropdown";
 const InfoPage = () => {
   const [data, getData] = useState([]);
   const navigate = useNavigate();
+  const items = [
+    { id: 1, text: "Building 1" },
+    { id: 2, text: "Building 2" },
+    { id: 3, text: "Building 3" },
+  ];
+
+  const getBuildings = () => {
+    // some code for fetching data
+  };
   return (
     <>
       <br></br>
@@ -28,30 +37,22 @@ const InfoPage = () => {
               Dropdown Button
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item
-                key={1}
-                onClick={(e) => {
-                  console.log("hello");
-                  console.log();
-                  // navigate(`/building/${id}`, { state: { id: id } });
-                }}
-              >
-                Action
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              {items.map((item) => (
+                <Dropdown.Item
+                  key={item.id}
+                  onClick={() =>
+                    navigate(`/building/${item.id}`, {
+                      state: { id: item.id },
+                    })
+                  }
+                >
+                  {item.text}
+                </Dropdown.Item>
+              ))}
             </Dropdown.Menu>
           </Dropdown>
         </InputGroup>
       </div>
-      {/* <Button
-          variant="light"
-          onClick={(e) => {
-            console.log(e.target.val);
-          }}
-        >
-          Light
-        </Button> */}
     </>
   );
 };
