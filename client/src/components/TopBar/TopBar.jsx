@@ -6,17 +6,6 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import logo from "../../assets/foobarlogo.png";
 
-const navLinkStyle = {
-  color: "light", // Text color
-  align: "right",
-  padding: "0.5rem 1rem", // Adjust padding as needed
-  margin: "0",
-};
-
-const navStyle = {
-  textAlign: "left", // Align the text to the left
-};
-
 const TopBar = () => {
   return (
     <Navbar
@@ -39,32 +28,11 @@ const TopBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link
-              style={{
-                navLinkStyle,
-              }}
-              as={Link}
-              to="/maps"
-            >
+            <Nav.Link as={Link} to="/map" className="ms-5">
               Maps
             </Nav.Link>
-            <Nav.Link
-              style={{
-                navLinkStyle,
-              }}
-              as={Link}
-              to="/info"
-            >
-              Info
-            </Nav.Link>
-            <Nav.Link
-              style={{
-                navLinkStyle,
-              }}
-              as={Link}
-              to="/main"
-            >
-              Main
+            <Nav.Link as={Link} to="/search" className="ms-5">
+              Search
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

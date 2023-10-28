@@ -5,8 +5,12 @@ import TopBar from "./components/TopBar/TopBar.jsx";
 import "./App.css";
 import MainPage from "./pages/MainPage/MainPage.jsx";
 import InfoPage from "./pages/InfoPage/InfoPage.jsx";
+<<<<<<< HEAD
 import MapPage from "./pages/InfoPage/InfoPage.jsx";
 import BuildingPage from "./pages/BuildingPage/BuildingPage.jsx";
+=======
+import MapPage from "./pages/MapPage/MapPage.jsx";
+>>>>>>> 0d93883e494d86f672604883a8d1534f35ae1558
 
 function App() {
   return (
