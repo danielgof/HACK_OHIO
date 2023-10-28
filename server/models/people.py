@@ -1,7 +1,7 @@
 from sqlalchemy import Column, String, Integer
-from utils.base import *
+from base import *
 
-"""Buildings"""
+"""Muildings"""
 class Building(Base):
     __tablename__ = "buildings"
     id = Column(Integer, primary_key=True)
