@@ -5,12 +5,8 @@ import TopBar from "./components/TopBar/TopBar.jsx";
 import "./App.css";
 import MainPage from "./pages/MainPage/MainPage.jsx";
 import InfoPage from "./pages/InfoPage/InfoPage.jsx";
-<<<<<<< HEAD
-import MapPage from "./pages/InfoPage/InfoPage.jsx";
-import BuildingPage from "./pages/BuildingPage/BuildingPage.jsx";
-=======
 import MapPage from "./pages/MapPage/MapPage.jsx";
->>>>>>> 0d93883e494d86f672604883a8d1534f35ae1558
+import BuildingPage from "./pages/BuildingPage/BuildingPage.jsx";
 
 function App() {
   return (
@@ -19,7 +15,7 @@ function App() {
         <TopBar />
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/info" element={<InfoPage />} />
+          <Route path="/search" element={<InfoPage />} />
           <Route path="/map" element={<MapPage />} />
           <Route path="/building/:id?" element={<BuildingPage />} />
         </Routes>
