@@ -9,7 +9,9 @@ const MapPage = () => {
   const handleMarkerClick = (event) => {
     const lat = event.latlng.lat;
     const lng = event.latlng.lng;
-    navigate(`/building/${Math.floor(lat)}`);
+    navigate(`/building/${Math.floor(lat)}`, {
+      state: { id: Math.floor(lat) },
+    });
   };
   return (
     <div>
