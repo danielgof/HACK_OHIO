@@ -1,12 +1,15 @@
 import React, { useContext } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { useNavigate } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
 
 const MapPage = () => {
+  const navigate = useNavigate();
+
   const handleMarkerClick = (event) => {
     const lat = event.latlng.lat;
     const lng = event.latlng.lng;
-    alert(`Marker clicked at Latitude: ${lat}, Longitude: ${lng}`);
+    navigate(`/building/${Math.floor(lat)}`);
   };
   return (
     <div>
@@ -29,7 +32,6 @@ const MapPage = () => {
               A pretty CSS3 popup. <br /> Easily customizable.
             </Popup>
           </Marker>
-          <script>var marker = L.marker([51.5, -0.09]).addTo(map);</script>
         </MapContainer>
       </div>
     </div>
