@@ -6,6 +6,17 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import logo from "../../assets/foobarlogo.png";
 
+const navLinkStyle = {
+  color: "light", // Text color
+  align: "right",
+  padding: "0.5rem 1rem", // Adjust padding as needed
+  margin: "0",
+};
+
+const navStyle = {
+  textAlign: "left", // Align the text to the left
+};
+
 const TopBar = () => {
   return (
     <Navbar
@@ -19,21 +30,44 @@ const TopBar = () => {
           <img
             background-color="white"
             src={logo}
-            height="45"
+            height="54"
             width="54"
             className="d-inline-block align-top"
             alt="logo"
           />
         </Navbar.Brand>
-        <Nav.Link style={{ color: "light" }} as={Link} to="/maps">
-          Maps
-        </Nav.Link>
-        <Nav.Link style={{ color: "light" }} as={Link} to="/info">
-          Info
-        </Nav.Link>
-        <Nav.Link style={{ color: "light" }} as={Link} to="/main">
-          Main
-        </Nav.Link>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link
+              style={{
+                navLinkStyle,
+              }}
+              as={Link}
+              to="/maps"
+            >
+              Maps
+            </Nav.Link>
+            <Nav.Link
+              style={{
+                navLinkStyle,
+              }}
+              as={Link}
+              to="/info"
+            >
+              Info
+            </Nav.Link>
+            <Nav.Link
+              style={{
+                navLinkStyle,
+              }}
+              as={Link}
+              to="/main"
+            >
+              Main
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
