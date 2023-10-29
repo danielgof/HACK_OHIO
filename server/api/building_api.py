@@ -19,7 +19,6 @@ def building_controller():
 def building_by_name():
     try:
         data = request.get_json(force=True)
-        # print(data["building_name"])
         responce = building_search(data["building_name"])
         return {"status": "success", "data": responce}, 200 
     except Exception as e:

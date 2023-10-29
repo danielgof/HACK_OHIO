@@ -113,3 +113,5 @@ export const ServerAPI_DELETE = ({
     headers: headers,
   });
 };
+
+export const URL = "http://localhost:5000/api/v1";
