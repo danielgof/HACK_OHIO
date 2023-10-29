@@ -10,6 +10,7 @@ def get_all():
         res.append({
             "id": bld.id,
             "building_name": bld.building_name,
+            "building_descr": bld.building_descr,
             "lat": bld.lat,
             "lng": bld.lng,
         })
@@ -22,6 +23,7 @@ def building_search(query):
         res.append({
             "id": bld.id,
             "building_name": bld.building_name,
+            "building_descr": bld.building_descr,
             "lat": bld.lat,
             "lng": bld.lng,
         })

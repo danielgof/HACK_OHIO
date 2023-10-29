@@ -13,6 +13,8 @@ import RoutePage from "./pages/RoutePage/RoutePage.jsx";
 import TeamPage from "./pages/TeamPage/TeamPage.jsx";
 import { UserContext } from "./utils/UserContext.jsx";
 import UserPage from "./pages/UserPage/UserPage.jsx";
+import MyBuildingPage from "./pages/MyBuildingsPage/MyBuildingsPage.jsx";
+import MyRoomsPage from "./pages/MyRoomsPage/MyRoomsPage.jsx";
 
 function App() {
   const [theme, setTheme] = useState("dark");
@@ -35,6 +37,8 @@ function App() {
             <Route path="/route_to/:room?" element={<RoutePage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="/profile/:id?" element={<UserPage />} />
+            <Route path="/mybuilding" element={<MyBuildingPage />} />
+            <Route path="/myroom" element={<MyRoomsPage />} />
           </Routes>
           <BottomBar />
         </div>

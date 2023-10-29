@@ -3,8 +3,10 @@ import Card from "react-bootstrap/Card";
 import hall from "../../assets/hall.jpg";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
+// import { useLocation } from "react-router-dom";
 
 const RoomCard = (props) => {
+  // const location = useLocation();
   return (
     <>
       <Card style={{ width: "90%" }}>
@@ -14,11 +16,8 @@ const RoomCard = (props) => {
           </Col>
           <Col>
             <Card.Body>
-              <Card.Title>{props.title}</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
+              <Card.Title>{props.room_name}</Card.Title>
+              <Card.Text>{props.descr}</Card.Text>
             </Card.Body>
           </Col>
         </Row>

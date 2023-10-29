@@ -11,6 +11,7 @@ def rooms_by_building(query):
         res.append({
             "id": room.id,
             "room_name": room.room_name,
-            "floor": room.floor
+            "descr": room.room_descr,
+            "floor": room.floor,
         })
     return res

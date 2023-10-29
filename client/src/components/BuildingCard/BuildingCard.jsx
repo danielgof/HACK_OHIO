@@ -5,6 +5,7 @@ import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 
 const BuildingCard = (props) => {
+  console.log(props)
   return (
     <>
       <Card style={{ width: "90%" }}>
@@ -15,10 +16,7 @@ const BuildingCard = (props) => {
           <Col>
             <Card.Body>
               <Card.Title>{props.title}</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
+              <Card.Text>{props.decr}</Card.Text>
             </Card.Body>
           </Col>
         </Row>

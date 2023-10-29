@@ -51,7 +51,13 @@ const BuildingRoomsPage = () => {
             align="center"
             key={i}
           >
-            <RoomCard key={item.id}>{item.room_name}</RoomCard>
+            <RoomCard
+              key={item.id}
+              room_name={item.room_name}
+              descr={item.descr}
+            >
+              {item.room_name}
+            </RoomCard>
             <br></br>
           </div>
         ))}

@@ -73,9 +73,10 @@ const SearchPage = () => {
                     align="center"
                     key={i}
                   >
-                    <BuildingCard title={val.building_name}>
-                      You can be intrested in: {val.building_name}
-                    </BuildingCard>
+                    <BuildingCard
+                      title={val.building_name}
+                      decr={val.building_descr}
+                    />
                     <br></br>
                   </div>
                 ))}

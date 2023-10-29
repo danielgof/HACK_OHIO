@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Stack from "react-bootstrap/Stack";
+import logo from "../../assets/floor1BW.png";
 import "./MainPage.css";
 
 const MainPage = () => {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [imgShow, setImgShow] = useState(true);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -12,6 +15,7 @@ const MainPage = () => {
   };
 
   const handleSubmit = (e) => {
+    setImgShow(false);
     e.preventDefault();
 
     if (!selectedFile) {
@@ -22,17 +26,17 @@ const MainPage = () => {
     const formData = new FormData();
     formData.append("image", selectedFile);
 
-    fetch("/upload", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        // Handle the server's response (e.g., display a success message)
-      })
-      .catch((error) => {
-        console.error("Error uploading the file:", error);
-      });
+    // fetch("/upload", {
+    //   method: "POST",
+    //   body: formData,
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     // Handle the server's response (e.g., display a success message)
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error uploading the file:", error);
+    //   });
   };
 
   return (
@@ -50,7 +54,20 @@ const MainPage = () => {
             onChange={handleFileChange}
           />
         </Form.Group>
-        <Button onClick={handleSubmit} variant="light">Send</Button>
+        <Stack align="center">
+          <div align="center">
+            <Button
+              style={{ width: "80%" }}
+              onClick={handleSubmit}
+              variant="light"
+            >
+              Send
+            </Button>
+            <br></br>
+            <br></br>
+            {imgShow ? <p></p> : <img width={"380px"} src={logo} alt="img" />}
+          </div>
+        </Stack>
         <br></br>
         <br></br>
       </div>
