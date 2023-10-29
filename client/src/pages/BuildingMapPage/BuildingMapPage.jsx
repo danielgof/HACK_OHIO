@@ -9,6 +9,7 @@ import {
 } from "react-leaflet";
 import { Polygon } from "react-leaflet";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
 
 function calculateCentroid(polygon) {
@@ -41,27 +42,9 @@ function rotatePolygon(polygon, angleInDegrees) {
   return rotatedPolygon;
 }
 
-function translateMatrix(matrix, angleInDegrees, displacement) {
-  // Convert the angle to radians
-  const angleInRadians = (angleInDegrees * Math.PI) / 180;
-
-  // Calculate the displacement along the x and y axes
-  const dx = displacement * Math.cos(angleInRadians);
-  const dy = displacement * Math.sin(angleInRadians);
-
-  const translatedMatrix = [];
-
-  for (let i = 0; i < matrix.length; i++) {
-    const x = matrix[i][0] + dx;
-    const y = matrix[i][1] + dy;
-    translatedMatrix.push([x, y]);
-  }
-
-  return translatedMatrix;
-}
-
-const BuildingPage = (props) => {
+const BuildingMapPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const id = navigate.id;
 
   const latConst = 1 / 364000;
@@ -75,44 +58,23 @@ const BuildingPage = (props) => {
     [39.9979 - latConst * 300, -83.0087 + longConst * 150],
   ];
   const hallway = [
-    [39.9979 + latConst * 50, -83.0087 + longConst * 150],
-    [39.9979 + latConst * 50, -83.0087 - longConst * 150],
-    [39.9979 - latConst * 50, -83.0087 - longConst * 150],
-    [39.9979 - latConst * 50, -83.0087 + longConst * 150],
-  ];
-
-  const roomA = [
-    [39.9979 + latConst * 50, -83.0087 + longConst * 50],
-    [39.9979 + latConst * 50, -83.0087 - longConst * 50],
-    [39.9979 - latConst * 50, -83.0087 - longConst * 50],
-    [39.9979 - latConst * 50, -83.0087 + longConst * 50],
+    [39.9979 + latConst * 75, -83.0087 + longConst * 150],
+    [39.9979 + latConst * 75, -83.0087 - longConst * 150],
+    [39.9979 - latConst * 75, -83.0087 - longConst * 150],
+    [39.9979 - latConst * 75, -83.0087 + longConst * 150],
   ];
   const blackOptions = { color: "black" };
   const redOptions = { color: "red" };
   const purpleOptions = { color: "purple" };
 
   const multiFloor = true;
-  const rotationAmount = 0;
 
-  const rotatedPolygon = rotatePolygon(polygon, rotationAmount);
-  var rotatedHallway = rotatePolygon(hallway, rotationAmount);
-  var rotatedRoomA = rotatePolygon(roomA, rotationAmount);
-  rotatedHallway = translateMatrix(
-    rotatedHallway,
-    rotationAmount,
-    latConst * -30,
-    0
-  );
-  rotatedRoomA = translateMatrix(
-    rotatedRoomA,
-    rotationAmount,
-    latConst * 65,
-    longConst * -10
-  );
+  const rotatedPolygon = rotatePolygon(polygon, -10);
+  const rotatedHallway = rotatePolygon(hallway, -10);
   return (
     <>
+      <h1>{navigate.title}</h1>
       <div>
-        <h1>building</h1>
         <div id="map" style={{ height: "400px" }}>
           <MapContainer center={center} zoom={26} style={{ height: "100%" }}>
             <TileLayer
@@ -130,10 +92,6 @@ const BuildingPage = (props) => {
                   <Polygon
                     pathOptions={blackOptions}
                     positions={rotatedHallway}
-                  />
-                  <Polygon
-                    pathOptions={blackOptions}
-                    positions={rotatedRoomA}
                   />
                 </LayerGroup>
               </LayersControl.BaseLayer>
@@ -156,4 +114,4 @@ const BuildingPage = (props) => {
   );
 };
 
-export default BuildingPage;
+export default BuildingMapPage;

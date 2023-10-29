@@ -4,9 +4,10 @@ import BottomBar from "./components/BottomBar/BottomBar.jsx";
 import TopBar from "./components/TopBar/TopBar.jsx";
 import "./App.css";
 import MainPage from "./pages/MainPage/MainPage.jsx";
-import InfoPage from "./pages/InfoPage/InfoPage.jsx";
+import SearchPage from "./pages/SearchPage/SearchPage.jsx";
 import MapPage from "./pages/MapPage/MapPage.jsx";
-import BuildingPage from "./pages/BuildingPage/BuildingPage.jsx";
+import BuildingMapPage from "./pages/BuildingMapPage/BuildingMapPage.jsx";
+import BuildingRoomsPage from "./pages/BuildingRoomsPage/BuildingRoomsPage.jsx";
 
 function App() {
   return (
@@ -15,9 +16,10 @@ function App() {
         <TopBar />
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/search" element={<InfoPage />} />
+          <Route path="/search" element={<SearchPage />} />
           <Route path="/map" element={<MapPage />} />
-          <Route path="/building/:id?" element={<BuildingPage />} />
+          <Route path="/building_map/:id?" element={<BuildingMapPage />} />
+          <Route path="/building_room/:id?" element={<BuildingRoomsPage />} />
         </Routes>
         <BottomBar />
       </div>

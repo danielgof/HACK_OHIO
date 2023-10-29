@@ -2,7 +2,6 @@ import { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import logo from "../../assets/foobarlogo.png";
 
@@ -29,10 +28,10 @@ const TopBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/map" className="ms-5">
-              Maps
+              Map
             </Nav.Link>
             <Nav.Link as={Link} to="/search" className="ms-5">
-              Search
+              Search for a Building
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
