@@ -42,6 +42,25 @@ function rotatePolygon(polygon, angleInDegrees) {
   return rotatedPolygon;
 }
 
+function translateMatrix(matrix, angleInDegrees, displacement) {
+  // Convert the angle to radians
+  const angleInRadians = (angleInDegrees * Math.PI) / 180;
+
+  // Calculate the displacement along the x and y axes
+  const dx = displacement * Math.cos(angleInRadians);
+  const dy = displacement * Math.sin(angleInRadians);
+
+  const translatedMatrix = [];
+
+  for (let i = 0; i < matrix.length; i++) {
+    const x = matrix[i][0] + dx;
+    const y = matrix[i][1] + dy;
+    translatedMatrix.push([x, y]);
+  }
+
+  return translatedMatrix;
+}
+
 const BuildingMapPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
