@@ -12,11 +12,13 @@ import RoomPage from "./pages/RoomPage/RoomPage.jsx";
 import RoutePage from "./pages/RoutePage/RoutePage.jsx";
 import TeamPage from "./pages/TeamPage/TeamPage.jsx";
 import { UserContext } from "./utils/UserContext.jsx";
+import UserPage from "./pages/UserPage/UserPage.jsx";
 
 function App() {
   const [theme, setTheme] = useState("dark");
   const [isAuth, setAuth] = useState(false);
-  const value = { theme, isAuth, setAuth, setTheme };
+  const [id, setId] = useState(2);
+  const value = { theme, isAuth, setAuth, setTheme, id, setId };
 
   return (
     <BrowserRouter>
@@ -32,6 +34,7 @@ function App() {
             <Route path="/room/:id?" element={<RoomPage />} />
             <Route path="/route_to/:room?" element={<RoutePage />} />
             <Route path="/team" element={<TeamPage />} />
+            <Route path="/profile/:id?" element={<UserPage />} />
           </Routes>
           <BottomBar />
         </div>

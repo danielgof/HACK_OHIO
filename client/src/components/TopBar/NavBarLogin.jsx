@@ -13,11 +13,12 @@ const NavBarLogin = (props) => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const { isAuth, setAuth } = useContext(UserContext);
+  const { isAuth, setAuth, id, setId } = useContext(UserContext);
 
   const signIn = async () => {
     try {
       setAuth(true);
+      setId(1);
     } catch (err) {
       console.error(err);
     }
@@ -26,6 +27,7 @@ const NavBarLogin = (props) => {
   const signInWithGoogle = async () => {
     try {
       setAuth(true);
+      setId(1);
     } catch (err) {
       console.error(err);
     }
@@ -34,6 +36,7 @@ const NavBarLogin = (props) => {
   const signInWithFacebook = async () => {
     try {
       setAuth(true);
+      setId(1);
     } catch (err) {
       console.error(err);
     }

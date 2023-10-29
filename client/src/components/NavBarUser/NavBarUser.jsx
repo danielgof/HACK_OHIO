@@ -6,12 +6,20 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../utils/UserContext";
 
 const NavBarUser = () => {
-  const { isAuth, setAuth } = useContext(UserContext);
+  const { isAuth, setAuth, id, setId } = useContext(UserContext);
   const navigate = useNavigate();
+
+  const handleClick = () => {
+    console.log(id);
+    navigate(`/profile/${id}`, {
+      state: { id: id },
+    });
+  };
 
   const logOut = async () => {
     try {
       setAuth(false);
+      setId(0);
     } catch (err) {
       console.error(err);
     }
@@ -24,7 +32,7 @@ const NavBarUser = () => {
           <Button
             variant="light"
             onClick={() => {
-              navigate("/profile");
+              handleClick();
             }}
           >
             <svg

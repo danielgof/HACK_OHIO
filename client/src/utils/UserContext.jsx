@@ -4,4 +4,5 @@ export const UserContext = createContext({
   theme: "light",
   isAuth: false,
   setAuth: () => {},
+  id: 0,
 });
