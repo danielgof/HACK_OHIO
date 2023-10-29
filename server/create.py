@@ -41,6 +41,9 @@ rooms_to_create = [
     ),
 ]
 building1.rooms = rooms_to_create
+building2.rooms = rooms_to_create
+building3.rooms = rooms_to_create
+building4.rooms = rooms_to_create
 # session.add(building1)
 # session.add(building2)
 # session.add(building3)
