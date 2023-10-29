@@ -3,7 +3,6 @@ import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
 import InputGroup from "react-bootstrap/InputGroup";
 import Stack from "react-bootstrap/Stack";
-import { ServerAPI_GET, ServerAPI_POST } from "../../lib/ServerAPI";
 import BuildingCard from "../../components/BuildingCard/BuildingCard";
 import "./SearchPage.css";
 
@@ -35,13 +34,13 @@ const SearchPage = () => {
       })
       .then((data) => {
         console.log("Data received:", data);
-        setData(data);
-        // You can work with the data here
+        setData(data["data"]);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   };
+  console.log(data);
 
   return (
     <>
