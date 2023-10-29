@@ -2,6 +2,7 @@ import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useNavigate } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
+import "./MapPage.css";
 
 const MapPage = () => {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ const MapPage = () => {
     });
   };
   return (
-    <div>
+    <div style={{ backgroundColor: "#2D3032" }} className="raleway-font">
       <h1>Map</h1>
       <div id="map" style={{ height: "400px" }}>
         <MapContainer
