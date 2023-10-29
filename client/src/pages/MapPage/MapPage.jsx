@@ -5,8 +5,9 @@ import "leaflet/dist/leaflet.css";
 import "./MapPage.css";
 import L from "leaflet";
 import icon from "../../assets/position-marker.png";
+import user from "../../assets/blue-marker.png";
 
-const MapPage = () => {
+const MapPage = (props) => {
   const navigate = useNavigate();
 
   const handleMarkerClick = (event) => {
@@ -20,6 +21,11 @@ const MapPage = () => {
   // Create a custom icon using the image URL
   const customIcon = new L.Icon({
     iconUrl: icon,
+    iconSize: [40, 40], // Width and height of the icon
+    iconAnchor: [20, 40], // Anchor point (center of the icon)
+  });
+  const locationIcon = new L.Icon({
+    iconUrl: user,
     iconSize: [40, 40], // Width and height of the icon
     iconAnchor: [20, 40], // Anchor point (center of the icon)
   });
