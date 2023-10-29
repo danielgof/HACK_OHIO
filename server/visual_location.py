@@ -16,6 +16,6 @@ def visual_location(room_name, image_maps):
         os.remove(filename)
 
         if room_name in text:
-            cv2.imwrite("marked_image.png", image)
+            cv2.imwrite("server/marked_image.png", image)
             break
         
