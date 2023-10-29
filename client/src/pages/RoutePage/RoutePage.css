@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Raleway"; /* Font family name */
+  src: url("../../assets/fonts/raleway.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Additional styles using the 'Raleway' font */
+.raleway-font {
+  color: white;
+  font-family: "Raleway", sans-serif;
+}
