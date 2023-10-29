@@ -5,7 +5,7 @@ const BuildingCard = (props) => {
   return (
     <>
       <Card style={{ width: "90%" }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
+        <Card.Img variant="top" src="../../assets/union.jpg" />
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>
           <Card.Text>
