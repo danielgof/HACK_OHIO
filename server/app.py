@@ -4,9 +4,11 @@ import logging
 import os
 from datetime import date
 from api.building_api import building
+from api.room_api import room
 
 app = Flask(__name__)
 app.register_blueprint(building)
+app.register_blueprint(room)
 CORS(app)
 
 if not os.path.isdir("./log"):

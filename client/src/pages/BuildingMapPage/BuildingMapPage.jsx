@@ -9,6 +9,7 @@ import {
 } from "react-leaflet";
 import { Polygon } from "react-leaflet";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
 
 function calculateCentroid(polygon) {
@@ -41,8 +42,9 @@ function rotatePolygon(polygon, angleInDegrees) {
   return rotatedPolygon;
 }
 
-const BuildingPage = (props) => {
+const BuildingMapPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const id = navigate.id;
 
   const latConst = 1 / 364000;
@@ -71,8 +73,8 @@ const BuildingPage = (props) => {
   const rotatedHallway = rotatePolygon(hallway, -10);
   return (
     <>
+      <h1>{navigate.title}</h1>
       <div>
-        <h1>building</h1>
         <div id="map" style={{ height: "400px" }}>
           <MapContainer center={center} zoom={26} style={{ height: "100%" }}>
             <TileLayer
@@ -112,4 +114,4 @@ const BuildingPage = (props) => {
   );
 };
 
-export default BuildingPage;
+export default BuildingMapPage;

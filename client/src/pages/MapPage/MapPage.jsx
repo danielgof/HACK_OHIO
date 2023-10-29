@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useNavigate } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
@@ -8,8 +8,8 @@ const MapPage = () => {
 
   const handleMarkerClick = (event) => {
     const lat = event.latlng.lat;
-    const lng = event.latlng.lng;
-    navigate(`/building/${Math.floor(lat)}`, {
+    // const lng = event.latlng.lng;
+    navigate(`/building_map/${Math.floor(lat)}`, {
       state: { id: Math.floor(lat) },
     });
   };
