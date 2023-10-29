@@ -50,7 +50,7 @@ const MainPage = () => {
             onChange={handleFileChange}
           />
         </Form.Group>
-        <Button onClick={handleSubmit} variant="secondary">Secondary</Button>
+        <Button onClick={handleSubmit} variant="light">Send</Button>
         <br></br>
         <br></br>
       </div>

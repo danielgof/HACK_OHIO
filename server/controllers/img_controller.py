@@ -16,8 +16,7 @@ def upload_to_imgur(path):
         files = {'image': (image_file.name, image_file)}
         response = requests.post(url, headers=headers, files=files)
         data = response.json()
-        # pprint(data)
-    
+        
     return data['link']
 
 

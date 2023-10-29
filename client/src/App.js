@@ -10,23 +10,32 @@ import BuildingMapPage from "./pages/BuildingMapPage/BuildingMapPage.jsx";
 import BuildingRoomsPage from "./pages/BuildingRoomsPage/BuildingRoomsPage.jsx";
 import RoomPage from "./pages/RoomPage/RoomPage.jsx";
 import RoutePage from "./pages/RoutePage/RoutePage.jsx";
+import TeamPage from "./pages/TeamPage/TeamPage.jsx";
+import { UserContext } from "./utils/UserContext.jsx";
 
 function App() {
+  const [theme, setTheme] = useState("dark");
+  const [isAuth, setAuth] = useState(false);
+  const value = { theme, isAuth, setAuth, setTheme };
+
   return (
     <BrowserRouter>
-      <div className="App">
-        <TopBar />
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/map" element={<MapPage />} />
-          <Route path="/building_map/:id?" element={<BuildingMapPage />} />
-          <Route path="/building_room/:id?" element={<BuildingRoomsPage />} />
-          <Route path="/room/:id?" element={<RoomPage />} />
-          <Route path="/route_to/:room?" element={<RoutePage />} />
-        </Routes>
-        <BottomBar />
-      </div>
+      <UserContext.Provider value={value}>
+        <div className="App">
+          <TopBar />
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/search" element={<SearchPage />} />
+            <Route path="/map" element={<MapPage />} />
+            <Route path="/building_map/:id?" element={<BuildingMapPage />} />
+            <Route path="/building_room/:id?" element={<BuildingRoomsPage />} />
+            <Route path="/room/:id?" element={<RoomPage />} />
+            <Route path="/route_to/:room?" element={<RoutePage />} />
+            <Route path="/team" element={<TeamPage />} />
+          </Routes>
+          <BottomBar />
+        </div>
+      </UserContext.Provider>
     </BrowserRouter>
   );
 }

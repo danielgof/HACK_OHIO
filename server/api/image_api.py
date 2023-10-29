@@ -5,7 +5,6 @@ from flask import request
 from flask import jsonify
 import os
 from controllers.img_controller import *
-# from controllers.room_image_search import *
 
 images = Blueprint("images", __name__, url_prefix="/api/v1/images")
 
