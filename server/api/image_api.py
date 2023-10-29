@@ -5,6 +5,7 @@ from flask import request
 from flask import jsonify
 import os
 from controllers.img_controller import *
+import visual_location
 
 images = Blueprint("images", __name__, url_prefix="/api/v1/images")
 
@@ -25,8 +26,9 @@ def upload():
 
         # Create a temporary file path
         temp_file_path = os.path.join('temp', uploaded_file.filename)
-        
-        print(google_room_search(upload_to_imgur(temp_file_path), "'Ohio Union' AND ('room' OR 'hall')"))
+
+        maps = ['server/mapsbw/floor0bw.png', 'server/mapsbw/floor1bw.png', 'server/mapsbw/floor2bw.png', 'server/mapsbw/floor3bw.png'] 
+        visual_location(google_room_search(upload_to_imgur(temp_file_path), "'Ohio Union' AND ('room' OR 'hall')"), maps)
 
     # # Process the uploaded image
     # # You can add your image processing logic here
