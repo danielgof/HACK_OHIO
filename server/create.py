@@ -17,6 +17,7 @@ building4 = Building(building_name="Dreese Lab", lat=90, lng=40)
 rooms_to_create = [
     Room(
         room_name="Room 101",
+        room_descr="Lab room",
         floor=1,
         P1_lat=40.123,
         P1_lng=-74.456,
@@ -29,6 +30,7 @@ rooms_to_create = [
     ),
     Room(
         room_name="Room 102",
+        room_descr="Lecture room",
         floor=2,
         P1_lat=40.223,
         P1_lng=-74.556,
