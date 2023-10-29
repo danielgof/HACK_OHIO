@@ -5,7 +5,7 @@ const RoomCard = (props) => {
   return (
     <>
       <Card style={{ width: "90%" }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
+        <Card.Img variant="top" src="../../assets/hall.jpg" />
         <Card.Body>
           <Card.Title>Card Title</Card.Title>
           <Card.Text>
