@@ -41,8 +41,8 @@ rooms_to_create = [
     ),
 ]
 building1.rooms = rooms_to_create
-session.add(building1)
-session.add(building2)
-session.add(building3)
-session.add(building4)
-session.commit()
+# session.add(building1)
+# session.add(building2)
+# session.add(building3)
+# session.add(building4)
+# session.commit()

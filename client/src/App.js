@@ -8,6 +8,7 @@ import SearchPage from "./pages/SearchPage/SearchPage.jsx";
 import MapPage from "./pages/MapPage/MapPage.jsx";
 import BuildingMapPage from "./pages/BuildingMapPage/BuildingMapPage.jsx";
 import BuildingRoomsPage from "./pages/BuildingRoomsPage/BuildingRoomsPage.jsx";
+import RoomPage from "./pages/RoomPage/RoomPage.jsx";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/map" element={<MapPage />} />
           <Route path="/building_map/:id?" element={<BuildingMapPage />} />
           <Route path="/building_room/:id?" element={<BuildingRoomsPage />} />
+          <Route path="/room/:id?" element={<RoomPage />} />
         </Routes>
         <BottomBar />
       </div>
