@@ -1,11 +1,12 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import logo from "../../assets/union.jpg";
 
 const BuildingCard = (props) => {
   return (
     <>
       <Card style={{ width: "90%" }}>
-        <Card.Img variant="top" src="../../assets/union.jpg" />
+        <img variant="top" src={logo} alt="img" />
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>
           <Card.Text>
