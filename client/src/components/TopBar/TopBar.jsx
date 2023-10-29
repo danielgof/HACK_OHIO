@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
-import logo from "../../assets/foobarlogo.png";
+import logo from "../../assets/treasure-map.png";
 import "./TopBar.css";
 
 const TopBar = () => {
