@@ -1,7 +1,7 @@
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from models.building import *
-from utils import *
+from utils import get_configs
 from base import *
 
 db_username, db_password, db_name, = get_configs()

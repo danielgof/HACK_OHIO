@@ -20,13 +20,15 @@ const MainPage = () => {
     const formData = new FormData();
     formData.append("image", selectedFile);
 
-    fetch("/upload", {
+    fetch("http://localhost:5000/upload", {
       method: "POST",
       body: formData,
+      
     })
       .then((response) => response.json())
       .then((data) => {
         // Handle the server's response (e.g., display a success message)
+        console.log("Server response:", data);
       })
       .catch((error) => {
         console.error("Error uploading the file:", error);
