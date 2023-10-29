@@ -51,7 +51,7 @@ const TeamPage = () => {
           <Col>
             <Card style={{ width: "18rem", boxShadow: "0px 0px 5px #666" }}>
               <Card.Body>
-                <Card.Title style={{ alignContent: "center" }}>Alex</Card.Title>
+                <Card.Title style={{ alignContent: "center" }}>Alex Zhang</Card.Title>
                 <Card.Text>Backend Engineer</Card.Text>
               </Card.Body>
             </Card>

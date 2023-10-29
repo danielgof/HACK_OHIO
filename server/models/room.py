@@ -7,6 +7,7 @@ class Room(Base):
     __tablename__ = "room"
     id = Column(Integer, primary_key=True)
     room_name = Column(String, nullable=False)
+    room_descr = Column(String, nullable=False)
     floor = Column(Integer, nullable=False)
     P1_lat = Column(Float, nullable=False)
     P1_lng = Column(Float, nullable=False)
