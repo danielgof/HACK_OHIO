@@ -4,19 +4,14 @@ import { useNavigate } from "react-router-dom";
 import InputGroup from "react-bootstrap/InputGroup";
 import Stack from "react-bootstrap/Stack";
 import { ServerAPI_GET, ServerAPI_POST } from "../../lib/ServerAPI";
+import BuildingCard from "../../components/BuildingCard/BuildingCard";
 
 const SearchPage = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
-  // const items = [
-  //   { id: 1, text: "Building 1" },
-  //   { id: 2, text: "Building 2" },
-  //   { id: 3, text: "Building 3" },
-  // ];
 
   const getBuildings = (e) => {
     console.log(e.target.value);
-    // Define the URL of the RESTful API endpoint you want to request data from
     const apiUrl = "http://localhost:5000/api/v1/building/bld_name";
 
     const data = {
@@ -68,16 +63,19 @@ const SearchPage = () => {
             <br></br>
             <Stack>
               {data.map((val, i) => (
-                <div key={i}>
-                  <li
-                    onClick={() =>
-                      navigate(`/building_room/${val.id}`, {
-                        state: { id: val.id, title: val.building_name },
-                      })
-                    }
-                  >
+                <div
+                  onClick={() =>
+                    navigate(`/building_room/${val.id}`, {
+                      state: { id: val.id, title: val.building_name },
+                    })
+                  }
+                  align="center"
+                  key={i}
+                >
+                  <BuildingCard title={val.building_name}>
                     You can be intrested in: {val.building_name}
-                  </li>
+                  </BuildingCard>
+                  <br></br>
                 </div>
               ))}
             </Stack>
