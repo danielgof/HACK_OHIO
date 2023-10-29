@@ -36,6 +36,7 @@ const BuildingRoomsPage = () => {
         console.error("Error:", error);
       });
   }, []);
+
   return (
     <>
       <h1>{location.state.title}</h1>

@@ -1,6 +1,7 @@
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from models.building import *
+from models.user import *
 from utils import *
 from base import *
 
@@ -9,10 +10,10 @@ engine = create_engine(f"postgresql://{db_username}:{db_password}@localhost:5432
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
-building1 = Building(building_name="Ohio Union", lat=89, lng=40)
-building2 = Building(building_name="Thonms lib", lat=91, lng=40)
-building3 = Building(building_name="18 lib", lat=89, lng=41)
-building4 = Building(building_name="Dreese Lab", lat=90, lng=40)
+building1 = Building(building_name="Ohio Union", building_descr="union", lat=89, lng=40)
+building2 = Building(building_name="Thonms lib", building_descr="lib", lat=91, lng=40)
+building3 = Building(building_name="18 lib", building_descr="lib", lat=89, lng=41)
+building4 = Building(building_name="Dreese Lab", building_descr="lib", lat=90, lng=40)
 
 rooms_to_create = [
     Room(
@@ -46,8 +47,16 @@ building1.rooms = rooms_to_create
 building2.rooms = rooms_to_create
 building3.rooms = rooms_to_create
 building4.rooms = rooms_to_create
+
+user = User(
+    username="uname",
+    phone="82389829",
+    email="some@tmail.com",
+    password="23232323",
+)
 # session.add(building1)
 # session.add(building2)
 # session.add(building3)
 # session.add(building4)
+# session.add(user)
 # session.commit()

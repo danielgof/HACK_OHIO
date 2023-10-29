@@ -6,10 +6,12 @@ from datetime import date
 from api.building_api import building
 from api.room_api import room
 from api.image_api import images
+from api.user_api import user
 
 app = Flask(__name__)
 app.register_blueprint(building)
 app.register_blueprint(room)
+app.register_blueprint(user)
 app.register_blueprint(images)
 CORS(app)
 
