@@ -5,7 +5,6 @@ import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 
 const BuildingCard = (props) => {
-  console.log(props)
   return (
     <>
       <Card style={{ width: "90%" }}>

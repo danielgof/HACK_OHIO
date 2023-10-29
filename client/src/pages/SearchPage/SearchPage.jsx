@@ -33,14 +33,13 @@ const SearchPage = () => {
         return response.json(); // Parse the response as JSON
       })
       .then((data) => {
-        console.log("Data received:", data);
+        // console.log("Data received:", data);
         setData(data["data"]);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   };
-  console.log(data);
 
   return (
     <>

@@ -8,15 +8,23 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import logo from "../../assets/treasure-map.png";
 import "./TopBar.css";
-import NavBarUser from "../NavBarUser/NavBarUser";
+import NavBarUser from "./NavBarUser";
 import { UserContext } from "../../utils/UserContext";
 import NavBarLogin from "./NavBarLogin";
 import NavBarRegister from "./NavBarRegister";
+import { createContext } from "react";
+
+export const LoginModalContext = createContext({
+  show: false,
+  setShow: () => {},
+});
 
 const TopBar = () => {
-  const { theme, isAuth, _, setTheme } = useContext(UserContext);
+  const { isAuth } = useContext(UserContext);
   const [modalShowLogin, setModalLoginShow] = useState(false);
   const [modalShowRegister, setModalRegisterShow] = useState(false);
+  const modalVal = { modalShowLogin, setModalLoginShow };
+
   return (
     <div className="raleway-font">
       <Navbar
@@ -61,7 +69,7 @@ const TopBar = () => {
                       width="16"
                       height="16"
                       fill="currentColor"
-                      class="bi bi-door-open-fill"
+                      className="bi bi-door-open-fill"
                       viewBox="0 0 16 16"
                     >
                       <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />
@@ -81,7 +89,7 @@ const TopBar = () => {
                           width="16"
                           height="16"
                           fill="currentColor"
-                          class="bi bi-person-fill-add"
+                          className="bi bi-person-fill-add"
                           viewBox="0 0 16 16"
                         >
                           <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -94,10 +102,12 @@ const TopBar = () => {
                 </Col>
               </Row>
             )}
-            <NavBarLogin
-              show={modalShowLogin}
-              onHide={() => setModalLoginShow(false)}
-            />
+            <LoginModalContext.Provider value={modalVal}>
+              <NavBarLogin
+                show={modalShowLogin}
+                onHide={() => setModalLoginShow(false)}
+              />
+            </LoginModalContext.Provider>
             <NavBarRegister
               show={modalShowRegister}
               onHide={() => setModalRegisterShow(false)}

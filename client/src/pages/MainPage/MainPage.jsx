@@ -57,7 +57,7 @@ const MainPage = () => {
         <Stack align="center">
           <div align="center">
             <Button
-              style={{ width: "80%" }}
+              style={{ width: "40%" }}
               onClick={handleSubmit}
               variant="light"
             >
