@@ -4,8 +4,8 @@ from models.room import *
 from models.building import *
 
 
-def get_rooms_building(data):
-    query = session.query(Room).filter(Building.building_name == data["building_name"]).all()
+def rooms_by_building(query):
+    query = session.query(Room).filter(Building.building_name == query).all()
     res = []
     for room in query:
         res.append({

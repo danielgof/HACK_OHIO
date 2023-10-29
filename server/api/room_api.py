@@ -11,7 +11,7 @@ room = Blueprint("room", __name__, url_prefix="/api/v1/room")
 def get_rooms_building():
     try:
         data = request.get_json(force=True)
-        responce = get_rooms_building(data)
+        responce = rooms_by_building(data["building_name"])
         return {"status": "success", "data": responce}, 200
     except Exception as e:
         current_app.logger.info("exception: ", e)
