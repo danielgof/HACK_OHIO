@@ -6,8 +6,6 @@ from datetime import date
 from api.building_api import building
 from api.room_api import room
 from api.image_upload_api import images
-import room_image_search
-import upload_to_imgur
 
 
 app = Flask(__name__)

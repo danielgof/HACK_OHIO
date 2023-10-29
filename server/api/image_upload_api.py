@@ -1,5 +1,5 @@
-import room_image_search
-import upload_to_imgur
+from controllers.room_image_search import *
+from controllers.upload_to_imgur import *
 from flask import Blueprint
 from create import *
 from models.building import *
