@@ -31,12 +31,14 @@ const MapPage = (props) => {
   });
   return (
     <div style={{ backgroundColor: "#2D3032" }} className="raleway-font">
+      <br></br>
       <h1>Map</h1>
-      <div id="map" style={{ height: "400px" }}>
+      <br></br>
+      <div id="map" align="center" style={{ height: "400px" }}>
         <MapContainer
           center={[39.9979, -83.0087]}
           zoom={13}
-          style={{ height: "100%" }}
+          style={{ height: "100%", width: "95%" }}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -53,6 +55,8 @@ const MapPage = (props) => {
           </Marker>
         </MapContainer>
       </div>
+      <br></br>
+      <br></br>
     </div>
   );
 };

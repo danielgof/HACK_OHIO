@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import "./MainPage.css";
 
 const MainPage = () => {
@@ -37,6 +38,7 @@ const MainPage = () => {
   return (
     <>
       <div align="center" style={{ backgroundColor: "#2D3032" }}>
+        <br></br>
         <h1 className="raleway-font">Take a picture of what's around you</h1>
         <br></br>
         <Form.Group controlId="formFileLg" className="mb-3">
@@ -48,7 +50,9 @@ const MainPage = () => {
             onChange={handleFileChange}
           />
         </Form.Group>
-        <button onClick={handleSubmit}>Upload</button>
+        <Button onClick={handleSubmit} variant="light">Send</Button>
+        <br></br>
+        <br></br>
       </div>
     </>
   );

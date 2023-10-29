@@ -15,7 +15,7 @@ const BottomBar = () => {
         style={{ backgroundColor: "#2D3032" }}
       >
         <Container>
-          <Navbar.Brand style={{ color: "light" }} as={Link} to="/">
+          <Navbar.Brand style={{ color: "light" }} as={Link} to="/team">
             <span
               style={{ color: "light" }}
               dangerouslySetInnerHTML={{ __html: "&copy;" }}
