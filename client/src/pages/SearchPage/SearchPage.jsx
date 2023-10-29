@@ -5,6 +5,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Stack from "react-bootstrap/Stack";
 import { ServerAPI_GET, ServerAPI_POST } from "../../lib/ServerAPI";
 import BuildingCard from "../../components/BuildingCard/BuildingCard";
+import "./SearchPage.css";
 
 const SearchPage = () => {
   const [data, setData] = useState([]);
@@ -44,43 +45,45 @@ const SearchPage = () => {
 
   return (
     <>
-      <br></br>
-      <br></br>
-      <br></br>
-      <div align="center">
-        <InputGroup style={{ width: "80%" }} className="mb-3">
-          <Stack>
-            <Form.Control
-              onChange={(e) => {
-                getBuildings(e);
-              }}
-              align="center"
-              placeholder="Enter the name of a building"
-              aria-label="Enter the name of a building"
-              aria-describedby="basic-addon2"
-            />
-            <br></br>
-            <br></br>
+      <div style={{ backgroundColor: "#2D3032" }}>
+        <br></br>
+        <br></br>
+        <br></br>
+        <div align="center" className="raleway-font">
+          <InputGroup style={{ width: "80%" }} className="mb-3">
             <Stack>
-              {data.map((val, i) => (
-                <div
-                  onClick={() =>
-                    navigate(`/building_room/${val.id}`, {
-                      state: { id: val.id, title: val.building_name },
-                    })
-                  }
-                  align="center"
-                  key={i}
-                >
-                  <BuildingCard title={val.building_name}>
-                    You can be intrested in: {val.building_name}
-                  </BuildingCard>
-                  <br></br>
-                </div>
-              ))}
+              <Form.Control
+                onChange={(e) => {
+                  getBuildings(e);
+                }}
+                align="center"
+                placeholder="Enter the name of a building"
+                aria-label="Enter the name of a building"
+                aria-describedby="basic-addon2"
+              />
+              <br></br>
+              <br></br>
+              <Stack>
+                {data.map((val, i) => (
+                  <div
+                    onClick={() =>
+                      navigate(`/building_room/${val.id}`, {
+                        state: { id: val.id, title: val.building_name },
+                      })
+                    }
+                    align="center"
+                    key={i}
+                  >
+                    <BuildingCard title={val.building_name}>
+                      You can be intrested in: {val.building_name}
+                    </BuildingCard>
+                    <br></br>
+                  </div>
+                ))}
+              </Stack>
             </Stack>
-          </Stack>
-        </InputGroup>
+          </InputGroup>
+        </div>
       </div>
     </>
   );

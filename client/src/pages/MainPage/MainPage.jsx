@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
+import "./MainPage.css";
 
 const MainPage = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -35,8 +36,8 @@ const MainPage = () => {
 
   return (
     <>
-      <div align="center">
-        <h1>Take a picture of what's around you</h1>
+      <div align="center" style={{ backgroundColor: "#2D3032" }}>
+        <h1 className="raleway-font">Take a picture of what's around you</h1>
         <br></br>
         <Form.Group controlId="formFileLg" className="mb-3">
           <Form.Control
