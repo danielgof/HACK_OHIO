@@ -1,13 +1,53 @@
 # HACK_OHIO
-### client
-- npm i
-- npm start
-### server
-- make sure you inside server folder
-- python -m venv venv (only one time)
-- . ./venv/Scripts/activate
-- pip install -r requirements.txt
-- python app.py
+## Init project
+## Clone project to your local machine
+```
+https://github.com/danielgof/HACK_OHIO.git
+```
+### Client
+- Selet appropriate folder
+```
+cd client
+```
+- Install dependencies
+```
+npm i
+```
+- Start the project
+```
+npm start
+```
+### Server
+- Make sure you inside server folder
+```
+cd server
+```
+- Init the virtual environment
+```
+python -m venv venv (only one time)
+```
+- Activate virtual environment
+```
+. ./venv/Scripts/activate
+```
+- Install required requirements
+```
+pip install -r requirements.txt
+```
+- Create config file 'config.yaml' inside server folder
+```
+database:
+  username:
+    "your username"
+  password:
+    "you password"
+  dbname:
+    "you db name"
+```
+- Launch the app
+```
+python app.py
+```
 
 # Interior Navigation Challenge
 
@@ -49,41 +89,7 @@ Once you've identified the problem, it's time to get creative. By "innovative so
 
 ---
 
-## Prizes
-
-- **1st Prize:** $500 Amazon Gift Cards (Divided amongst team members)
-- **2nd Prize:** $300 Amazon Gift Cards (Divided amongst team members)
-- **3rd Prize:** $200 Amazon Gift Cards (Divided amongst team members)
-
----
-
-## Deliverables
-
-We expect deliverables to include a video pitch that articulates your team's understanding of the indoor navigation problem, presents your proposed innovative solution, and shares key learnings acquired during the project.
-
----
-
-## Judging
-
-Solutions will be judged on:
-
-- **Problem Solving:** Evaluation of how effectively your solution addresses the identified indoor navigation challenge.
-- **Creativity:** Assessment of the originality and innovation in your approach to solving the problem.
-- **Clarity:** Measurement of how clearly your team articulates the problem and proposed solution in the video pitch.
-- **Completeness:** Review of the thoroughness and detail in your proposed solution, including all necessary components.
-- **Impact:** Judgment on the potential real-world effectiveness and reach of your solution.
-
----
-
-## Additional Resources
-
-- [Hype Video](https://youtu.be/c7S18TIBNv4?si=-uhDoU1gW5ooUzcV)
-
----
-
-## Team / Questions
-
-If you have any questions or concerns, please do not hesitate to reach out:
+## Team
 
 - Daniil Gofman
 - Alex Zhang

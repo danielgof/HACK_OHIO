@@ -13,7 +13,7 @@ const NavBarLogin = (props) => {
   const [password, setPassword] = useState("");
 
   const { setAuth, setId } = useContext(UserContext);
-  const { modalShowLogin, setModalLoginShow } = useContext(LoginModalContext);
+  const { setModalLoginShow } = useContext(LoginModalContext);
 
   const signIn = async () => {
     try {

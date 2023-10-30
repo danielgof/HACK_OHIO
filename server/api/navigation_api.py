@@ -7,6 +7,7 @@ from controllers.room_controller import *
 
 nav = Blueprint("nav", __name__, url_prefix="/api/v1/nav")
 
+
 @nav.route("/to_rooms", methods=["POST"])
 def get_route():
     try:
