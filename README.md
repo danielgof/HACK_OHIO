@@ -1,4 +1,4 @@
-# HACK_OHIO
+# Polaris
 ## Init project
 ## Clone project to your local machine
 ```
